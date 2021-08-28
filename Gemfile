@@ -28,6 +28,8 @@ gem "jbuilder", "~> 2.7"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
+gem "pagy", "~> 3.11" # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator
+
 gem "devise", "~> 4.7" # Flexible authentication solution for Rails
 
 gem "aws-sdk-s3", "~> 1.14" # For aws s3 bucket
