@@ -34,6 +34,7 @@ gem "devise", "~> 4.7" # Flexible authentication solution for Rails
 
 gem "aws-sdk-s3", "~> 1.14" # For aws s3 bucket
 gem "bootstrap", "~> 4.5" # css bootstrap
+gem "credit_card_validations" # credit card validation
 gem "devise-bootstrapped", github: "excid3/devise-bootstrapped", branch: "bootstrap4"
 gem "foreman"
 gem "sidekiq", "~> 6.1.2" # Sidekiq is used to process background jobs with the help of Redis
