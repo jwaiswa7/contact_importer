@@ -8,6 +8,8 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.2.0)
+      concurrent-ruby (~> 1.0)
     actioncable (6.0.4.1)
       actionpack (= 6.0.4.1)
       nio4r (~> 2.0)
@@ -123,6 +125,8 @@ GEM
     foreman (0.87.2)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    has_defaults (0.4.4)
+      activerecord
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -312,6 +316,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  aasm
   aws-sdk-s3 (~> 1.14)
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.5)
@@ -322,6 +327,7 @@ DEPENDENCIES
   factory_bot_rails (~> 5.2)
   faker (~> 2.11)
   foreman
+  has_defaults
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pagy (~> 3.11)

@@ -6,7 +6,6 @@ class Contact < ApplicationRecord
   validates :name, format: { with: /\A[a-zA-Z0-9 -]+\z/ }
   validates :email, format: { with: Devise.email_regexp }
 
-
   before_validation :set_franchise, on: :create
 
   private

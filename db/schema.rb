@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_28_192840) do
+ActiveRecord::Schema.define(version: 2021_08_29_002347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contact_uploads", force: :cascade do |t|
+    t.jsonb "file_data"
+    t.string "status"
+    t.jsonb "data_columns"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_contact_uploads_on_user_id"
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -42,5 +52,6 @@ ActiveRecord::Schema.define(version: 2021_08_28_192840) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contact_uploads", "users"
   add_foreign_key "contacts", "users"
 end

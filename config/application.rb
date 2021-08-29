@@ -31,5 +31,7 @@ module ContactImporter
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.time_zone = "America/Mexico_City"
   end
 end

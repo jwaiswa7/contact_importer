@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :contact do
-    name { "#{Faker::Name.first_name} #{Faker::Name.first_name}"  }
+    name { "#{Faker::Name.first_name} #{Faker::Name.first_name}" }
     date_of_birth { Faker::Date.birthday(min_age: 18, max_age: 65) }
     phone { Faker::PhoneNumber.phone_number_with_country_code }
     address { Faker::Address.street_name }

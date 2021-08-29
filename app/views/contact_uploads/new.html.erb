@@ -1,0 +1,17 @@
+<%= render "shared/nav" %>
+<div class="row justify-content-center">
+	<div class="col-6">
+		<% if @contact_upload.errors.any? %>
+		  <ul>
+            <% @contact_upload.errors.full_messages.each do |message|%>
+              <li><%= message %> </li>
+            <%end%>
+          </ul>
+        <%end%>
+		<%= form_for @contact_upload do |f| %>
+          <%= f.hidden_field :file, value: @contact_upload.cached_file_data %>
+          <%= f.file_field :file,  accept: 'text/csv',  class: "form-control" %>
+          <%= f.submit class: "btn btn-success" %>
+        <% end %>
+	</div>
+</div>

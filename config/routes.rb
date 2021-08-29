@@ -2,7 +2,9 @@
 
 Rails.application.routes.draw do
   
+  post '/process/:id', to: "contact_uploads#process", as: "process_upload"
   resources :contacts, only: :index
+  resources :contact_uploads, only: %i[index new create]
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_scope :user do
