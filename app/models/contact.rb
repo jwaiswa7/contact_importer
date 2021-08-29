@@ -13,12 +13,32 @@ class Contact < ApplicationRecord
 
   before_validation :set_franchise, on: :create
 
-  protected
+  validate :valid_credit_card_number
+
+  private
+
+  def valid_credit_card_number
+    errors.add(:credit_card, 'is invalid') if branch.nil?
+  end
 
   def set_franchise
-    return if credit_card.nil?
+    self.franchise = branch
+  end
 
-    detector = CreditCardValidations::Detector.new(credit_card)
-    self.franchise = detector.brand
+  def branch
+    case credit_card
+    when /4[0-9]{12}(?:[0-9]{3})?/
+      "Visa"
+    when /5[1-5][0-9]{14}/
+      "MasterCard"
+    when /6(?:011|5[0-9][0-9])[0-9]{12}/
+      "Discover"
+    when /3[47][0-9]{13}/
+      "American Express"
+    when /3(?:0[0-5]|[68][0-9])[0-9]{11}/
+      "Diners"
+    when /(?:2131|1800|35\d{3})\d{11}/
+      "JCB"
+    end
   end
 end
