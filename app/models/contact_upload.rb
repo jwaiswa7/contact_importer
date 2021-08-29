@@ -1,7 +1,6 @@
 class ContactUpload < ApplicationRecord
+  belongs_to :user
 
-  belongs_to :user 
-  
   include FileUploader::Attachment[:file]
 
   validates :file, presence: true
@@ -32,10 +31,10 @@ class ContactUpload < ApplicationRecord
       {
         "name": nil,
         "date_of_birth": nil,
-        "telephone": nil, 
-        "address": nil, 
+        "telephone": nil,
+        "address": nil,
         "credit_card": nil
       }
-    }
+    },
   )
 end
