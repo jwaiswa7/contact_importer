@@ -34,7 +34,6 @@ class ContactUploadsController < ApplicationController
         format.html { render :edit }
       end
     end
-
   end
 
   private
@@ -44,6 +43,6 @@ class ContactUploadsController < ApplicationController
   end
 
   def contact_upload_params
-    params.require(:contact_upload).permit(:file, :name, :email,  :date_of_birth, :telephone, :address, :credit_card)
+    params.require(:contact_upload).permit(:file, :name, :email, :date_of_birth, :telephone, :address, :credit_card)
   end
 end

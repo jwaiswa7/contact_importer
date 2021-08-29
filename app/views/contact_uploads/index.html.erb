@@ -4,6 +4,7 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
+					<th>File</th>
 					<th>Date</th>
 					<th>Status</th>
 					<th>Errors</th>
@@ -13,6 +14,7 @@
 			<tbody>
 				<% @contact_uploads.each do |c_upload| %>
 				  <tr>
+				  	<td><%= link_to "Download", c_upload.file_url %></td>
 				    <td><%= c_upload.created_at.strftime('%b %d  %H:%M') %> </td>
 				    <td><%= c_upload.status.tr_s("_", " ").capitalize %> </td>
 				    <td><%= link_to "Error log", upload_errors_path(c_upload) %></td>

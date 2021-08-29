@@ -34,7 +34,7 @@ class ContactUpload < ApplicationRecord
     data_columns: proc {
       {
         "name": nil,
-        "email": nil, 
+        "email": nil,
         "date_of_birth": nil,
         "telephone": nil,
         "address": nil,
