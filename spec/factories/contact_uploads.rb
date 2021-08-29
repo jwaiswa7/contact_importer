@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :contact_upload do
-    file_data { "" }
-    status { "MyString" }
-    data_columns { "" }
+    file { Rack::Test::UploadedFile.new(Rails.root.join('spec/files/test.csv'), 'text/csv') }
+    association :user, factory: :user
   end
 end
