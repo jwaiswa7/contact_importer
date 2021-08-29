@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :contacts
   has_many :contact_uploads
+
+  validates :email, presence: true
 end
