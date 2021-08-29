@@ -66,9 +66,13 @@ RSpec.describe Contact, type: :model do
     expect(contact).not_to be_valid
   end
 
-  it "is a valid credit card number" do 
-  	contact.credit_card = "12345"
-  	expect(contact).not_to be_valid
+
+  it "encrypts the credit card" do 
+    expect(contact.credit_card).not_to eq("371449635398431")
+  end
+
+  it "sets the franchise" do 
+    expect(contact.franchise).to eq("American Express")
   end
 
   it "is a valid contact" do

@@ -4,7 +4,7 @@ FactoryBot.define do
     date_of_birth { Faker::Date.birthday(min_age: 18, max_age: 65) }
     phone { "(+57) 320 432 05 09" }
     address { Faker::Address.street_name }
-    credit_card { %w[371449635398431 30569309025904].sample }
+    credit_card { "371449635398431" }
     email { Faker::Internet.email }
     association :user, factory: :user
   end

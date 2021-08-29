@@ -78,8 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: contact_importer_production
-  username: contact_importer
-  password: <%= ENV['CONTACT_IMPORTER_DATABASE_PASSWORD'] %>
