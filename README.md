@@ -32,3 +32,11 @@ Click the process button and you will be redirected to a page where are requeste
 
 Once they have been indentified, click the start processing button and the application will process the csv file to import the contacts in the application. 
 
+The processing of the file is take place in the background, and after a while, contacts will be imported in your contacts list. 
+
+Once the file processing is complete, there is an error log created, if the prcoessing is complete and no errors are present, then the file status will be `finished`, if all the fileds have error, then the file status will be `failed`. 
+
+Contacts will be showed under the contacts page once you are logged into the application. 
+
+
+
