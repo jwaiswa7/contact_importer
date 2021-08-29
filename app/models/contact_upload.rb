@@ -26,10 +26,13 @@ class ContactUpload < ApplicationRecord
     end
   end
 
+  store_accessor :data_columns, :email, :name, :date_of_birth, :telephone, :address, :credit_card
+
   has_defaults(
     data_columns: proc {
       {
         "name": nil,
+        "email": nil, 
         "date_of_birth": nil,
         "telephone": nil,
         "address": nil,

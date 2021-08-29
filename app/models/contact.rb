@@ -11,8 +11,9 @@ class Contact < ApplicationRecord
   private
 
   def set_franchise
-  	return nil if self.credit_card.nil?
-  	detector = CreditCardValidations::Detector.new(self.credit_card)
+    return if credit_card.nil?
+
+    detector = CreditCardValidations::Detector.new(credit_card)
     self.franchise = detector.brand
   end
 end
