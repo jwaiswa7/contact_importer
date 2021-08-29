@@ -26,10 +26,13 @@ class ContactUploadsController < ApplicationController
   def edit; end
 
   def update
-    if @contact_upload.update(contact_upload_params)
-      ProcessFileJob.perform_async(@contact_upload.id)
-      format.html { redirect_to contacts_path, notice: "Processing File" }
-    else
+    respond_to do |format|
+      if @contact_upload.update(contact_upload_params)
+        ProcessFileJob.perform_async(@contact_upload.id)
+        format.html { redirect_to contacts_path, notice: "Processing File" }
+      else
+        format.html { render :edit }
+      end
     end
 
   end

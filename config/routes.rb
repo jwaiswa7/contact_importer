@@ -2,7 +2,9 @@
 
 Rails.application.routes.draw do
   
-  # post '/process/:id', to: "contact_uploads#process", as: "process_upload"
+  scope ":upload_id" do 
+    resources :upload_errors, only: :index
+  end
   resources :contacts, only: %i[index]
   resources :contact_uploads, only: %i[index new create edit update]
   devise_for :users

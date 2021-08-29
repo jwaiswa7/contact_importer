@@ -1,6 +1,8 @@
 class ContactUpload < ApplicationRecord
   belongs_to :user
 
+  has_many :upload_errors
+
   include FileUploader::Attachment[:file]
 
   validates :file, presence: true

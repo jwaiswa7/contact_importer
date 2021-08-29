@@ -11,7 +11,7 @@ class ProcessContactFile
     file = File.open(@file, "r:ISO-8859-1")
     rows = CSV.parse(file)
     errors = []
-    rows.each do |contact_row|
+    rows.each_with_index do |contact_row, index|
       begin
         contact = Contact.new(
           name: contact_row[@contact_upload.name.to_i], 
@@ -25,6 +25,7 @@ class ProcessContactFile
         contact.save!
       rescue StandardError => e
         errors << e
+        UploadError.create(details: e, upload_row: index, contact_upload: @contact_upload)
       end
     end
 

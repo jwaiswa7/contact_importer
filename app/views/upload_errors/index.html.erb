@@ -1,0 +1,23 @@
+<%= render "shared/nav" %>
+<div class="row">
+	<div class="col-12">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Row</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @upload_errors.each do |e_upload| %>
+				  <tr>
+				    <td><%= e_upload.upload_row %> </td>
+				    <td><%= e_upload.details %> </td>
+				  </tr>
+				<% end %>
+			</tbody>
+			
+		</table>
+		<%==  pagy_bootstrap_nav(@pagy) %>
+	</div>
+</div>

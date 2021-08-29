@@ -1,6 +1,7 @@
 <%= render "shared/nav" %>
 <div class="row justify-content-center">
 	<div class="col-6">
+    <h4>Please set the column name for the information in the file below</h4>
 		<% if @contact_upload.errors.any? %>
 		  <ul>
             <% @contact_upload.errors.full_messages.each do |message|%>
