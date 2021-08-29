@@ -25,7 +25,7 @@
 				    <td><%= contact.date_of_birth %> </td>
 				    <td><%= contact.phone %> </td>
 				    <td><%= contact.address %> </td>
-				    <td><%= contact.credit_card %> </td>
+				    <td><%= decrypt_credit_card(contact.credit_card) %> </td>
 				    <td><%= contact.franchise %> </td>
 				    <td><%= contact.email %> </td>
 				  </tr>

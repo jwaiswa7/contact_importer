@@ -13,9 +13,20 @@ class Contact < ApplicationRecord
 
   before_validation :set_franchise, on: :create
 
-  validate :valid_credit_card_number
+  validate :valid_credit_card_number, on: :create
+
+  before_create :encrypt_credit_card
 
   private
+
+  def encrypt_credit_card
+    encryption_key = "ee3f718c0acbba82d7113cf07c6064f4670641243e1005d3d0b86d7fb208e2e9"
+
+    cryptor = ActiveSupport::MessageEncryptor.new(encryption_key[0..31], encryption_key)
+
+    self.credit_card = cryptor.encrypt_and_sign(self.credit_card)
+
+  end
 
   def valid_credit_card_number
     errors.add(:credit_card, 'is invalid') if branch.nil?
