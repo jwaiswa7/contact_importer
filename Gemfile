@@ -34,9 +34,14 @@ gem "devise", "~> 4.7" # Flexible authentication solution for Rails
 
 gem "aws-sdk-s3", "~> 1.14" # For aws s3 bucket
 gem "bootstrap", "~> 4.5" # css bootstrap
+gem "credit_card_validations" # credit card validation
 gem "devise-bootstrapped", github: "excid3/devise-bootstrapped", branch: "bootstrap4"
 gem "foreman"
 gem "sidekiq", "~> 6.1.2" # Sidekiq is used to process background jobs with the help of Redis
+
+gem "shrine", "~> 3.3" # Uploading, downloading, processing and deleting IO objects
+gem "redis", "~> 4.2" # Redis ruby client
+gem "redis-rails", "~> 5.0.2" # Redis for Ruby on Rails
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
