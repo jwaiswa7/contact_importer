@@ -1,24 +1,34 @@
-# README
+## Welcome to Contact Importer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Creating database
 
-Things you may want to cover:
+Run the commands `rake db:create`, `rake db:migrate` and rake `db:seed` to setup the database
 
-* Ruby version
+Once the database is setup, run the application using the command `rails s`, this will start the application on the link `http://localhost:3000`
 
-* System dependencies
+### Contact process
 
-* Configuration
+Please create a new acocunt under the registration page. 
 
-* Database creation
+You will need to provice an email and password. 
 
-* Database initialization
+Once an account is created, then you can be logged in and head over to the contacts page 
 
-* How to run the test suite
+### Uploading contact file 
 
-* Services (job queues, cache servers, search engines, etc.)
+Please create a csv file with columns containing the information below: 
 
-* Deployment instructions
+* name
+* date_of_birth
+* phone
+* address
+* credit_card
+* franchise
+* email
 
-* ...
+Once the file is uploaded, you will be redircted to a page that has a button to process the file. 
+
+Click the process button and you will be redirected to a page where are requested to indentify the column numbers of the relevant information in the csv file. 
+
+Once they have been indentified, click the start processing button and the application will process the csv file to import the contacts in the application. 
+
