@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
+  require "sidekiq/web"
+
+  mount Sidekiq::Web => "/sidekiq"  
   
   scope ":upload_id" do 
     resources :upload_errors, only: :index
