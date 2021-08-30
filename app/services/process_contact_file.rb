@@ -3,7 +3,11 @@ class ProcessContactFile
 
   def initialize(contact)
     @contact_upload = ContactUpload.find(contact)
-    @file = Rails.root.join("public#{@contact_upload.file_url}")
+    if Rails.env.production?
+      @file = @contact_upload.file_url
+    else
+      @file = Rails.root.join("public#{@contact_upload.file_url}")
+    end
   end
 
   def call
