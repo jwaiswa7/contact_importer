@@ -11,7 +11,8 @@ class ProcessContactFile
   end
 
   def call
-    @contact_upload.process!
+    @contact_upload.process! unless @contact_upload.status == "processing"
+    
     file = File.open(@file, "r:ISO-8859-1")
     rows = CSV.parse(file)
     errors = []
