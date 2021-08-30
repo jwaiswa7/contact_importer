@@ -1,0 +1,11 @@
+---
+:concurrency: 5
+
+test:
+  :concurrency: 10
+
+production:
+  :concurrency: 15
+
+:queues:
+  - ["default", 1]
