@@ -8,7 +8,7 @@ class Contact < ApplicationRecord
   validates :phone, length: { minimum: 19, maximum: 19 }
 
   validates :name, format: { with: /\A[a-zA-Z0-9 -]+\z/ }
-  validates :email, format: { with: Devise.email_regexp }
+  validates :email, format: { with: /^.+@.+$/ }
   validates :phone, format: { with: /\A[- +()0-9]+\z/ }
 
   before_validation :set_franchise, on: :create
